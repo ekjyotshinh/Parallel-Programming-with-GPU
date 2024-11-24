@@ -1,0 +1,179 @@
+### Intro to C Programming Cheatsheet
+
+#### **Basics**
+- **C Language**: A general-purpose, procedural programming language. Known for its efficiency and use in system-level programming.
+- **Compiling**: C code must be compiled using a compiler like GCC (`gcc file.c -o output`).
+
+---
+
+#### **Structure of a C Program**
+```c
+#include <stdio.h> // Include standard input-output library
+
+int main() {
+    // Entry point of the program
+    printf("Hello, World!\n"); // Print statement
+    return 0; // End of program
+}
+```
+
+---
+
+#### **Data Types**
+| Type         | Description            | Example       |
+|--------------|------------------------|---------------|
+| `int`        | Integer                | `int a = 5;`  |
+| `float`      | Floating-point number  | `float x = 5.2;` |
+| `double`     | Double-precision float | `double y = 5.22;` |
+| `char`       | Character              | `char c = 'A';` |
+| `void`       | No return type         | `void func();` |
+
+---
+
+#### **Control Structures**
+1. **If-Else**
+   ```c
+   if (condition) {
+       // Code block
+   } else {
+       // Code block
+   }
+   ```
+2. **Switch**
+   ```c
+   switch (variable) {
+       case value1: 
+           // Code
+           break;
+       case value2:
+           // Code
+           break;
+       default:
+           // Code
+   }
+   ```
+3. **Loops**
+   - **For Loop**:
+     ```c
+     for (int i = 0; i < 10; i++) {
+         // Code
+     }
+     ```
+   - **While Loop**:
+     ```c
+     while (condition) {
+         // Code
+     }
+     ```
+   - **Do-While Loop**:
+     ```c
+     do {
+         // Code
+     } while (condition);
+     ```
+
+---
+
+#### **Operators**
+| Operator   | Symbol | Example            |
+|------------|--------|--------------------|
+| Arithmetic | `+ - * / %` | `a + b`        |
+| Relational | `== != < > <= >=` | `a == b` |
+| Logical    | `&& || !` | `a && b`        |
+| Assignment | `=` | `a = 5;`             |
+| Bitwise    | `& | ^ ~ << >>` | `a & b`  |
+
+---
+
+#### **Functions**
+```c
+#include <stdio.h>
+
+// Function prototype
+int add(int x, int y);
+
+int main() {
+    int result = add(5, 3);
+    printf("Sum: %d\n", result);
+    return 0;
+}
+
+// Function definition
+int add(int x, int y) {
+    return x + y;
+}
+```
+
+---
+
+#### **Pointers**
+- A pointer stores the memory address of a variable.
+```c
+int a = 10;
+int *p = &a; // Pointer to a
+printf("Value of a: %d\n", *p); // Dereference pointer
+```
+
+---
+
+#### **Arrays**
+```c
+int arr[5] = {1, 2, 3, 4, 5};
+for (int i = 0; i < 5; i++) {
+    printf("%d ", arr[i]);
+}
+```
+
+---
+
+#### **Strings**
+- Strings are arrays of characters ending with `\0`.
+```c
+char str[] = "Hello";
+printf("%s\n", str);
+```
+
+---
+
+#### **Input/Output**
+1. **Input**:
+   ```c
+   int x;
+   scanf("%d", &x); // Reads an integer
+   ```
+2. **Output**:
+   ```c
+   printf("Value: %d\n", x); // Prints an integer
+   ```
+
+---
+
+#### **File Handling**
+```c
+#include <stdio.h>
+FILE *fptr;
+
+fptr = fopen("file.txt", "w"); // Open file in write mode
+fprintf(fptr, "Hello, File!"); // Write to file
+fclose(fptr); // Close file
+```
+
+---
+
+#### **Memory Management**
+```c
+#include <stdlib.h>
+
+int *p = malloc(5 * sizeof(int)); // Allocates memory
+free(p); // Frees allocated memory
+```
+
+---
+
+#### **Best Practices**
+1. Always use meaningful variable names.
+2. Comment your code for clarity.
+3. Check the return value of functions like `malloc()` and `fopen()`.
+4. Use `const` for read-only variables.
+5. Free dynamically allocated memory to avoid memory leaks.
+
